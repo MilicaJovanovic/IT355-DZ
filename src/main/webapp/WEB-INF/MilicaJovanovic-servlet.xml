@@ -22,4 +22,22 @@
         </property>
         <property name="defaultEncoding" value="UTF-8"/>
     </bean>
+    
+    <bean id="sobaDao" class="com.milica.dao.impl.SobaDaoImpl" />
+    <bean id="logAspect" class="com.milica.aspect.InterceptorLog" />
+    <bean id="logPointcutAdvisor" class="org.springframework.aop.support.NameMatchMethodPointcutAdvisor">
+        <property name="advice" ref="logAspect" />
+        <property name="mappedName">
+            <value>*</value>
+        </property>
+    </bean>
+    
+    <bean id="testServiceProxy" class="org.springframework.aop.framework.autoproxy.BeanNameAutoProxyCreator">
+        <property name="beanNames" value="sobaDao" />
+        <property name="interceptorNames">
+            <list>
+                <value>logPointcutAdvisor</value>
+            </list>
+        </property>
+    </bean>
 </beans>
