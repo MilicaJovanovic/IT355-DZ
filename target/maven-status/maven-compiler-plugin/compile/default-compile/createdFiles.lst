@@ -1,6 +1,7 @@
 com\milica\aspect\InterceptorLog.class
 com\milica\dao\SobaDao.class
 com\milica\model\Soba.class
-com\milica\dao\impl\SobaDaoImpl.class
 com\milica\controller\MyFirstController.class
 com\milica\controller\SobaController.class
+com\milica\controller\HelloController.class
+com\milica\dao\impl\SobaDaoImpl.class

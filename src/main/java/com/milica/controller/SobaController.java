@@ -22,19 +22,13 @@ import org.springframework.web.servlet.ModelAndView;
  * @author Milica
  */
 @Controller
-@RequestMapping("/")
+@RequestMapping("/soba")
 public class SobaController {
     @Autowired
     private MessageSource messageSource;
     
     @Autowired
     private SobaDao sobaDao;
-    
-//    @RequestMapping(method = RequestMethod.GET)
-//    public ModelAndView hotel(ModelMap model) {
-//        System.out.println(messageSource.getMessage("bedNumber", null, Locale.ENGLISH));
-//        return new ModelAndView("soba", "command", new Soba());
-//    }
     
     @RequestMapping(method = RequestMethod.GET)
     public ModelAndView soba(ModelMap model) {
@@ -49,17 +43,6 @@ public class SobaController {
         System.out.println(messageSource.getMessage("bedNumber", null, Locale.ENGLISH));
         return new ModelAndView("soba", "command", new Soba());
     }
-//
-//    @RequestMapping(value = "/dodajSobu", method = RequestMethod.POST)
-//    public String addStudent(@ModelAttribute Soba hotel, ModelMap model) {
-//        model.addAttribute("brojKreveta", hotel.getBrojKreveta());
-//        model.addAttribute("velicina", hotel.getVelicina());
-//        model.addAttribute("kupatilo", hotel.getKupatilo());
-//        model.addAttribute("tv", hotel.getTv());
-//        model.addAttribute("klima", hotel.getKlima());
-//        model.addAttribute("cenaPoDanu", hotel.getCenaPoDanu());
-//        return "prikazSobe";
-//    }
         
     @RequestMapping(value = "/dodajSobu", method = RequestMethod.POST)
     public String addStudent(@ModelAttribute Soba soba, ModelMap model) {

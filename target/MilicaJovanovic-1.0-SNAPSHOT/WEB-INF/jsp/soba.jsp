@@ -3,7 +3,7 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ include file="header.jsp" %>
 <h2>Unesite informacije o sobi</h2>
-    <form:form method="POST" action="/MilicaJovanovic/dodajSobu">
+    <form:form method="POST" action="/MilicaJovanovic/soba/dodajSobu">
     <table>
         <tr>
             <td><form:label path="brojKreveta"><spring:message code="bedNumber"/></form:label></td>
