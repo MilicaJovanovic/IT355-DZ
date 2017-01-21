@@ -1,15 +1,14 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.milica.model;
+
+import java.io.Serializable;
 
 /**
  *
  * @author Milica
  */
-public class Soba {
+@SuppressWarnings("serial")
+public class Soba implements Serializable {
+    private int id;
     private int brojKreveta;
     private double velicina;
     private String kupatilo;
@@ -19,13 +18,22 @@ public class Soba {
     
     public Soba() {}
 
-    public Soba(int brojKreveta, double velicina, String kupatilo, String tv, String klima, double cenaPoDanu) {
+    public Soba(int id, int brojKreveta, double velicina, String kupatilo, String tv, String klima, double cenaPoDanu) {
+        this.id = id;
         this.brojKreveta = brojKreveta;
         this.velicina = velicina;
         this.kupatilo = kupatilo;
         this.tv = tv;
         this.klima = klima;
         this.cenaPoDanu = cenaPoDanu;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public int getBrojKreveta() {
@@ -74,5 +82,10 @@ public class Soba {
 
     public void setCenaPoDanu(double cenaPoDanu) {
         this.cenaPoDanu = cenaPoDanu;
+    }
+
+    @Override
+    public String toString() {
+        return "Soba{" + "id=" + id + ", brojKreveta=" + brojKreveta + ", velicina=" + velicina + ", kupatilo=" + kupatilo + ", tv=" + tv + ", klima=" + klima + ", cenaPoDanu=" + cenaPoDanu + '}';
     }
 }
