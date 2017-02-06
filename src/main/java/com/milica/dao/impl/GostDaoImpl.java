@@ -5,7 +5,8 @@
  */
 package com.milica.dao.impl;
 
-import com.milica.dao.SobaDao;
+import com.milica.dao.GostDao;
+import com.milica.entities.Gost;
 import com.milica.entities.Soba;
 import java.util.List;
 import org.hibernate.SessionFactory;
@@ -19,50 +20,50 @@ import org.springframework.transaction.annotation.Transactional;
  * @author Milica
  */
 @Repository
-public class SobaDaoImpl implements SobaDao {
-    
+public class GostDaoImpl implements GostDao {
+     
     @Autowired
     private SessionFactory sessionFactory;
     
-    public SobaDaoImpl() {}
+    public GostDaoImpl() {}
     
-    public SobaDaoImpl(SessionFactory sessionFactory) {
+    public GostDaoImpl(SessionFactory sessionFactory) {
         this.sessionFactory = sessionFactory;
     }
 
     @Override
     @Transactional
-    public boolean addSoba(Soba soba) {
-        sessionFactory.getCurrentSession().save(soba);
+    public boolean addGost(Gost gost) {
+        sessionFactory.getCurrentSession().save(gost);
         return true;
     }
 
     @Override
     @Transactional
-    public boolean editSoba(Soba soba) {
-        sessionFactory.getCurrentSession().saveOrUpdate(soba);
+    public boolean editGost(Gost gost) {
+        sessionFactory.getCurrentSession().saveOrUpdate(gost);
         return true;
     }
 
     @Override
     @Transactional
-    public boolean deleteSoba(Soba soba) {
-        sessionFactory.getCurrentSession().delete(soba);
+    public boolean deleteGost(Gost gost) {
+        sessionFactory.getCurrentSession().delete(gost);
         return true;
     }
     
     @Override
     @Transactional
-    public Soba getSobaById(int id) {
-        Soba soba = (Soba) sessionFactory.getCurrentSession().createCriteria(Soba.class).add(Restrictions.eq("sobaId", id)).uniqueResult();
-        return soba;
+    public Gost getGostById(int id) {
+        Gost gost = (Gost) sessionFactory.getCurrentSession().createCriteria(Gost.class).add(Restrictions.eq("gostId", id)).uniqueResult();
+        return gost;
     }
     
     @SuppressWarnings("unchecked")
     @Override
     @Transactional
-    public List<Soba> getSobe() {
-        List<Soba> results = (List<Soba>) sessionFactory.getCurrentSession().createCriteria(Soba.class).list();
+    public List<Gost> getGosti() {
+        List<Gost> results = (List<Gost>) sessionFactory.getCurrentSession().createCriteria(Gost.class).list();
         return results;
     }
 }

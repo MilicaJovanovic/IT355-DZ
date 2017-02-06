@@ -5,17 +5,17 @@
  */
 package com.milica.dao;
 
-import com.milica.entities.Soba;
+import com.milica.entities.Gost;
 import java.util.List;
 
 /**
  *
  * @author Milica
  */
-public interface SobaDao {
-    public boolean addSoba(Soba soba);
-    public boolean editSoba(Soba soba);
-    public boolean deleteSoba(Soba soba);
-    public Soba getSobaById(int id);
-    public List<Soba> getSobe();
+public interface GostDao {
+    public boolean addGost(Gost gost);
+    public boolean editGost(Gost gost);
+    public boolean deleteGost(Gost gost);
+    public Gost getGostById(int id);
+    public List<Gost> getGosti();
 }
